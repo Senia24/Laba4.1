@@ -32,7 +32,7 @@ input_word = input("Введите слово: ").strip().lower()
 if not input_word:
     print(" Пустой ввод.")
     exit(1)
-
+start_time = time.time()
 input_letters = Counter(input_word)
 
 matches = [word for word in dictionary if can_build(word, input_letters)]
@@ -40,9 +40,13 @@ matches = [word for word in dictionary if can_build(word, input_letters)]
 # Сортировка по убыванию длины
 matches.sort(key=lambda w: (-len(w), w))
 print("Автор: Кочаров Арсений Андреевич, группа:090301-ПОВа-о25")
+
 print("Найдено слов:", len(matches))
 for word in matches:
     print("-", word)
+end_time = time.time()
+print(f"Затрачено времени: {end_time-start_time:.5f} сек")
 ```
 ## Результат выполнения программы:
-<img width="527" height="306" alt="image" src="https://github.com/user-attachments/assets/fc671fef-a0e9-4b6e-9bcc-97cedaef3ff0" />
+<img width="556" height="276" alt="image" src="https://github.com/user-attachments/assets/1d8730a1-1698-4e1e-a70e-639a34e9148b" />
+
